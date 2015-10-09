@@ -1,0 +1,27 @@
+{
+  "name": "voyager",
+  "main": "voyager.js",
+  "version": "0.0.0",
+  "authors": [
+    "SeanSassenrath <sean.sassenrath@gmail.com>"
+  ],
+  "description": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "foundation": "~5.5.3"
+  },
+  "resolutions": {
+    "foundation": "5.5.2"
+  }
+}
