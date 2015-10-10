@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="voyager">
+<head>
+  <meta charset="utf-8">
+
+  <title>Voyager</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/src/css/common.css">
+</head>
+<body>
+  <head>
+
+    <div class="h500 bgc-green debug">
+      <nav class="top-bar debug">
+        <ul class="title-area">
+          <li class="name">
+            <h2><a href="">Voyager</a></h2>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="row">
+        <div class="small-12 text-center columns pt150 debug">
+          <h1>Oh, the places you'll go</h1>
+        </div>
+      </div>
+      <div class="row collapse">
+        <div class="small-6 small-offset-2 columns pt50 debug">
+          <input type="text" placeholder="Where to next?">
+        </div>
+        <div class="small-2 columns end pt50 debug">
+          <button class="button postfix">Search</button>
+        </div>
+      </div>
+    </div>
+
+  </head>
+
+  <main>
+
+    <div class="row">
+      <div class="small-12 text-center columns pt25 debug">
+        <h4>Near by places</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div id="map" class="small-12 columns h300 debug">
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <div class="row">
+      <div class="small-12 columns h300 debug">
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67l5ej33fk4Y1YT4SjLNeSYJwHp0G22I&libraries=places"></script>
+  <script src="./assets/public/js/main.js"></script>
+</body>
+</html>
