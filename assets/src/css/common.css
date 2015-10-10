@@ -1,5 +1,8 @@
 .debug { border: 1px solid red; }
 
+nav {background: none !important;}
+
+.h300 {height: 300px;}
 .h500 {height: 500px;}
 
 .bgc-green {background-color: green;}
