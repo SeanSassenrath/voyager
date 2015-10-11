@@ -4,10 +4,10 @@
   <meta charset="utf-8">
 
   <title>Voyager</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/src/css/common.css">
+  <link rel="stylesheet" type="text/css" href="./assets/public/css/styles.css">
 </head>
-<body>
+<body ng-controller="PlacesCtrl as place">
+
   <head>
 
     <div class="h500 bgc-green debug">
@@ -58,7 +58,11 @@
     </div>
   </footer>
 
+  <script type="text/javascript" src="assets/public/js/main.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67l5ej33fk4Y1YT4SjLNeSYJwHp0G22I&libraries=places"></script>
-  <script src="./assets/public/js/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
+  <script type="text/javascript" src="app/voyager.js"></script>
+  <script type="text/javascript" src="app/controllers/places-controller.js"></script>
+  <script type="text/javascript" src="app/models/places-model.js"></script>
 </body>
 </html>
