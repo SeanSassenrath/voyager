@@ -10,7 +10,7 @@
 
   <head>
 
-    <div class="h500 bgc-green debug">
+    <div class="h500 hero debug">
       <nav class="top-bar debug">
         <ul class="title-area">
           <li class="name">
@@ -21,30 +21,32 @@
 
       <div class="row">
         <div class="small-12 text-center columns pt150 debug">
-          <h1>Oh, the places you'll go</h1>
+          <h1 class="c-white">Oh, the places you'll go</h1>
         </div>
       </div>
-      <form name="place.userForm" ng-submit="place.submit(place.newPlace)">
-        <div class="row pt50">
-          <div class="small-12 medium-3 text-center columns debug">
-            <h4>I'd like to find</h4>
+      <div class="debug mt38" style="background-color: rgba(0, 0, 0, .7)">
+        <form name="place.userForm" ng-submit="place.submit(place.newPlace)">
+          <div class="row pt50">
+            <div class="small-12 medium-3 text-center columns pt5 debug">
+              <h4 class="c-white">I'd like to find</h4>
+            </div>
+            <div class="small-12 medium-3 columns debug">
+              <input type="text" placeholder="e.g. Pizza" class="text-center c-white bg-none bd-none bd-bottom-white fz-1-5 h50" ng-model="place.newPlace.activity" required="true">
+            </div>
+            <div class="small-12 medium-2 text-center columns pt5 debug">
+              <h4 class="c-white">near</h4>
+            </div>
+            <div class="small-12 medium-4 columns debug">
+              <input type="text" placeholder="e.g. current location" class="text-center c-white bg-none b-none b-bottom-white fz-1-5 h50" ng-model="place.newPlace.location">
+            </div>
           </div>
-          <div class="small-12 medium-4 columns debug">
-            <input type="text" placeholder="e.g. Pizza" ng-model="place.newPlace.activity" required="true">
+          <div class="row">
+            <div class='small-6 medium-3 small-centered columns pt15'>
+              <button class="button postfix" type="submit">Search</button>
+            </div>
           </div>
-          <div class="small-12 medium-2 text-center columns debug">
-            <h4>near </h4>
-          </div>
-          <div class="small-12 medium-3 columns debug">
-            <input type="text" value="current location" ng-model="place.newPlace.location">
-          </div>
-        </div>
-        <div class="row">
-          <div class='small-6 medium-3 small-centered columns'>
-            <button class="button postfix" type="submit">Search</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
 
   </head>
@@ -57,8 +59,18 @@
       </div>
     </div>
     <div class="row">
-      <div id="map" class="small-12 columns h300 debug">
+      <div id="map" class="small-12 columns h400 debug">
       </div>
+    </div>
+
+    <div class="row" ng-model="place.places" ng-repeat="x in place.places">
+      <div style="height: 200px; background-positioin: center; background-size: cover; background-image: url('{{x.photos[0].getUrl({maxWidth: 200})}}')" class="small-3 columns debug">
+        <img class="bgc-white h40 pt5 pr5 pb5 pl30 p-a l-0 b-0" src="{{x.icon}}"/>
+      </div>
+      <div class="small-9 columns debug">
+
+      </div>
+      <h4>{{x.name}}</h4>
     </div>
 
   </main>
@@ -66,7 +78,7 @@
 
   <footer>
     <div class="row">
-      <div class="small-12 columns h300 debug">
+      <div class="small-12 columns h400 debug">
       </div>
     </div>
   </footer>

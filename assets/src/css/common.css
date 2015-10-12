@@ -2,11 +2,43 @@
 
 nav {background: none !important;}
 
-.h300 {height: 300px;}
+.h40 {height: 40px;}
+.h50 {height: 50px !important;}
+.h400 {height: 400px;}
 .h500 {height: 500px;}
 
-.bgc-green {background-color: green;}
+.bgc-white {background-color: white;}
+.bg-none {background: none !important;}
 
+.bd-none {border: none !important;}
+.bd-bottom-white {border-bottom: 2px solid white !important;}
+
+.mt38 {margin-top: 38px !important}
+
+.pt5 {padding-top: 5px;}
+.pt15 {padding-top: 15px;}
 .pt25 {padding-top: 25px;}
 .pt50 {padding-top: 50px;}
 .pt150 {padding-top: 150px;}
+
+.pb5 {padding-bottom: 5px;}
+
+.pr5 {padding-right: 5px;}
+
+.pl10 {padding-left: 10px;}
+
+.pos-a {position: absolute;}
+
+.l-0 {left: 0;}
+
+.b-0 {bottom: 0;}
+
+.fz-1-5 { font-size: 1.5em !important; }
+
+.c-white { color: white !important; }
+
+.hero {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../../../assets/src/img/place.jpg');
+  background-position: center;
+  background-size: cover;
+}
