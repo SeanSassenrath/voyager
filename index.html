@@ -24,14 +24,27 @@
           <h1>Oh, the places you'll go</h1>
         </div>
       </div>
-      <div class="row collapse">
-        <div class="small-6 small-offset-2 columns pt50 debug">
-          <input type="text" placeholder="Where to next?">
+      <form name="place.userForm" ng-submit="place.submit(place.newPlace)">
+        <div class="row pt50">
+          <div class="small-12 medium-3 text-center columns debug">
+            <h4>I'd like to find</h4>
+          </div>
+          <div class="small-12 medium-4 columns debug">
+            <input type="text" placeholder="e.g. Pizza" ng-model="place.newPlace.activity" required="true">
+          </div>
+          <div class="small-12 medium-2 text-center columns debug">
+            <h4>near </h4>
+          </div>
+          <div class="small-12 medium-3 columns debug">
+            <input type="text" value="current location" ng-model="place.newPlace.location">
+          </div>
         </div>
-        <div class="small-2 columns end pt50 debug">
-          <button class="button postfix">Search</button>
+        <div class="row">
+          <div class='small-6 medium-3 small-centered columns'>
+            <button class="button postfix" type="submit">Search</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
   </head>

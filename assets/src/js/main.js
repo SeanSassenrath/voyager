@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("doc is ready")
+  console.log("jQuery is present")
 })
 // (function initialize() {
 
