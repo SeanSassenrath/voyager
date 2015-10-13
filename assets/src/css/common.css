@@ -5,7 +5,7 @@ nav {background: none !important;}
 .h40 {height: 40px;}
 .h50 {height: 50px !important;}
 .h400 {height: 400px;}
-.h500 {height: 500px;}
+.h550 {height: 550px;}
 
 .bgc-white {background-color: white;}
 .bg-none {background: none !important;}
@@ -27,13 +27,15 @@ nav {background: none !important;}
 
 .pl10 {padding-left: 10px;}
 
-.pos-a {position: absolute;}
+.pos-a {position: absolute !important;}
 
-.l-0 {left: 0;}
+.l-0 {left: 0 !important;}
 
-.b-0 {bottom: 0;}
+.b-20 {bottom: 20px !important;}
 
 .fz-1-5 { font-size: 1.5em !important; }
+.fz-5 { font-size: 5em !important; }
+.f-dancing-script {font-family: 'Dancing Script', cursive;}
 
 .c-white { color: white !important; }
 
