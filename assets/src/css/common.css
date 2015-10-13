@@ -1,17 +1,19 @@
-.debug { border: 1px solid red; }
+/*.debug { border: 1px solid red; }*/
 
 nav {background: none !important;}
 
 .h40 {height: 40px;}
 .h50 {height: 50px !important;}
 .h400 {height: 400px;}
-.h550 {height: 550px;}
+.h545 {height: 545px;}
 
 .bgc-white {background-color: white;}
 .bg-none {background: none !important;}
 
 .bd-none {border: none !important;}
 .bd-bottom-white {border-bottom: 2px solid white !important;}
+.bdr-bottom-right-2 {border-bottom-right-radius: 2px !important;}
+.bdr-top-right-2 {border-top-right-radius: 2px !important;}
 
 .mt38 {margin-top: 38px !important}
 
@@ -38,9 +40,23 @@ nav {background: none !important;}
 .f-dancing-script {font-family: 'Dancing Script', cursive;}
 
 .c-white { color: white !important; }
+.c-mint {color: #8BB79F !important;}
+.c-salmon {color: #FF7373 !important;}
 
 .hero {
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../../../assets/src/img/place.jpg');
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (max-width:480px) {
+  #hero-img {
+    height: 595px;
+  }
+  #hero-text {
+    padding-top: 120px;
+  }
+  #hero-text h1 {
+    font-size: 2em !important;
+  }
 }

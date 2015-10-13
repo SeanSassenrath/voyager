@@ -12,6 +12,10 @@ angular.module('placesCtrl', [])
 
     ctrl.places = [];
 
+    ctrl.resetPlaces = function() {
+      ctrl.places = []
+    }
+
     ctrl.submit = function(place) {
       console.log("New place = ", place.activity + " " + place.location);
       if(place.location === "" || place.location === "current location") {
@@ -37,7 +41,6 @@ angular.module('placesCtrl', [])
         location: point,
         radius: '500',
         query: place.activity,
-        language: 'en'
       };
 
       var service = new google.maps.places.PlacesService(map);
@@ -45,9 +48,7 @@ angular.module('placesCtrl', [])
 
       function callback(results, status) {
         if (status === "OK") {
-          // console.log("Results Array ", results)
-          // ctrl.places = results;
-          console.log('Ctrl places ', ctrl.places)
+          ctrl.resetPlaces();
           for(var i = 0; i < results.length; i++) {
             createMarker(results[i])
             var address = results[i].formatted_address;
@@ -56,6 +57,7 @@ angular.module('placesCtrl', [])
             results[i].formatted_address = splitAddress.join(",");
             ctrl.places.push(results[i])
           }
+          console.log('Ctrl places ', ctrl.places)
           $scope.$apply();
         } else {
           console.log("Status ", status)
