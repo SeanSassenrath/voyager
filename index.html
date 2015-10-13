@@ -11,7 +11,7 @@
 
   <head>
 
-    <div class="h550 hero debug">
+    <div id="hero-img" class="h545 hero debug">
       <nav class="top-bar debug">
         <ul class="title-area">
           <li class="name">
@@ -21,7 +21,7 @@
       </nav>
 
       <div class="row">
-        <div class="small-12 text-center columns pt150 debug">
+        <div id="hero-text" class="small-12 text-center columns pt150 debug">
           <h1 class="c-white f-dancing-script fz-5">Oh, the places you'll go</h1>
         </div>
       </div>
@@ -57,7 +57,7 @@
 <div>
     <div class="row" ng-hide="place.places <= 0">
       <div class="small-12 text-center columns pt25 debug">
-        <h4>Places near by</h4>
+        <h4>Places near {{place.newPlace.location || "your current location"}}</h4>
       </div>
     </div>
     <div class="row">
@@ -68,30 +68,30 @@
     <div class="row">
       <div class="small-12 medium-9 debug small-centered columns">
 
-        <div class="row pt15" ng-model="place.places" ng-repeat="x in place.places">
-          <div class="small-12 medium-5 columns debug" style="height: 200px; background-position: center; background-size: cover; background-image: url('{{x.photos[0].getUrl({maxWidth: 200}) || './assets/public/img/no-img.png'}}')">
-            <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20" src="{{x.icon}}"/>
-            <!-- <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20" src="{{x.icon}}"/> -->
+        <div class="row pt15" ng-model="place.places" ng-repeat="place in place.places">
+          <div class="small-12 medium-5 columns debug" style="height: 200px; background-position: center; background-size: cover; background-image: url('{{place.photos[0].getUrl({maxWidth: 200}) || './assets/public/img/no-img.png'}}')">
+            <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20 bdr-top-right-2 bdr-bottom-right-2" src="{{place.icon}}"/>
           </div>
           <div class="small-12 medium-7 end columns debug">
             <div class="row">
               <div class="small-12 columns debug">
-                <h4>{{x.name}}</h4>
+                <h4>{{place.name}}</h4>
               </div>
             </div>
             <div class="row">
               <div class="small-12 columns debug">
-                <h6>{{x.formatted_address}}</h6>
+                <h6>{{place.formatted_address}}</h6>
               </div>
             </div>
             <div class="row">
               <div class="small-12 columns debug">
-                <h6>Rating: {{x.rating || "None"}}</h6>
+                <h6>Rating: {{place.rating || "None"}}</h6>
               </div>
             </div>
             <div class="row">
-              <div class="small-12 columns debug">
-                <h6>{{x.opening_hours.open_now}}</h6>
+              <div class="small-12 columns debug" ng-switch on="place.opening_hours.open_now">
+                <h6 class="c-mint" ng-switch-when="true">Currently Open</h6>
+                <h6 class="c-salmon" ng-switch-when="false">Currently Closed</h6>
               </div>
             </div>
           </div>
