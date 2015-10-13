@@ -4,13 +4,14 @@
   <meta charset="utf-8">
 
   <title>Voyager</title>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./assets/public/css/styles.css">
 </head>
 <body ng-controller="PlacesCtrl as place">
 
   <head>
 
-    <div class="h500 bgc-green debug">
+    <div class="h550 hero debug">
       <nav class="top-bar debug">
         <ul class="title-area">
           <li class="name">
@@ -21,52 +22,91 @@
 
       <div class="row">
         <div class="small-12 text-center columns pt150 debug">
-          <h1>Oh, the places you'll go</h1>
+          <h1 class="c-white f-dancing-script fz-5">Oh, the places you'll go</h1>
         </div>
       </div>
-      <form name="place.userForm" ng-submit="place.submit(place.newPlace)">
-        <div class="row pt50">
-          <div class="small-12 medium-3 text-center columns debug">
-            <h4>I'd like to find</h4>
+      <div class="debug mt38" style="background-color: rgba(0, 0, 0, .7)">
+        <form name="place.userForm" ng-submit="place.submit(place.newPlace)">
+          <div class="row pt50">
+            <div class="small-12 medium-3 text-center columns pt5 debug">
+              <h4 class="c-white">I'd like to find</h4>
+            </div>
+            <div class="small-12 medium-3 columns debug">
+              <input type="text" placeholder="e.g. Pizza" class="text-center c-white bg-none bd-none bd-bottom-white fz-1-5 h50" ng-model="place.newPlace.activity" required="true">
+            </div>
+            <div class="small-12 medium-2 text-center columns pt5 debug">
+              <h4 class="c-white">near</h4>
+            </div>
+            <div class="small-12 medium-4 columns debug">
+              <input type="text" placeholder="e.g. current location" class="text-center c-white bg-none bd-none bd-bottom-white fz-1-5 h50" ng-model="place.newPlace.location">
+            </div>
           </div>
-          <div class="small-12 medium-4 columns debug">
-            <input type="text" placeholder="e.g. Pizza" ng-model="place.newPlace.activity" required="true">
+          <div class="row">
+            <div class='small-6 medium-3 small-centered columns pt15'>
+              <button class="button postfix" type="submit">Search</button>
+            </div>
           </div>
-          <div class="small-12 medium-2 text-center columns debug">
-            <h4>near </h4>
-          </div>
-          <div class="small-12 medium-3 columns debug">
-            <input type="text" value="current location" ng-model="place.newPlace.location">
-          </div>
-        </div>
-        <div class="row">
-          <div class='small-6 medium-3 small-centered columns'>
-            <button class="button postfix" type="submit">Search</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
 
   </head>
 
   <main>
 
-    <div class="row">
+<div>
+    <div class="row" ng-hide="place.places <= 0">
       <div class="small-12 text-center columns pt25 debug">
-        <h4>Near by places</h4>
+        <h4>Places near by</h4>
       </div>
     </div>
     <div class="row">
-      <div id="map" class="small-12 columns h300 debug">
+      <div id="map" class="small-12 columns h400 debug">
       </div>
     </div>
+
+    <div class="row">
+      <div class="small-12 medium-9 debug small-centered columns">
+
+        <div class="row pt15" ng-model="place.places" ng-repeat="x in place.places">
+          <div class="small-12 medium-5 columns debug" style="height: 200px; background-position: center; background-size: cover; background-image: url('{{x.photos[0].getUrl({maxWidth: 200}) || './assets/public/img/no-img.png'}}')">
+            <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20" src="{{x.icon}}"/>
+            <!-- <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20" src="{{x.icon}}"/> -->
+          </div>
+          <div class="small-12 medium-7 end columns debug">
+            <div class="row">
+              <div class="small-12 columns debug">
+                <h4>{{x.name}}</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 columns debug">
+                <h6>{{x.formatted_address}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 columns debug">
+                <h6>Rating: {{x.rating || "None"}}</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 columns debug">
+                <h6>{{x.opening_hours.open_now}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   </main>
 
 
   <footer>
     <div class="row">
-      <div class="small-12 columns h300 debug">
+      <div class="small-12 columns h50 debug">
       </div>
     </div>
   </footer>

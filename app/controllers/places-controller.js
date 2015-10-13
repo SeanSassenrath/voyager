@@ -1,18 +1,20 @@
 'use strict';
 
 angular.module('placesCtrl', [])
-    .controller('PlacesCtrl', function(Places){
+    .controller('PlacesCtrl', function($scope){
 
     var ctrl = this;
 
     ctrl.newPlace = {
       activity: "",
-      location: "current location",
+      location: "",
     };
+
+    ctrl.places = [];
 
     ctrl.submit = function(place) {
       console.log("New place = ", place.activity + " " + place.location);
-      if(place.location === "current location") {
+      if(place.location === "" || place.location === "current location") {
         ctrl.getCurrentLocation(place)
       } else {
         ctrl.getLocation(place)
@@ -26,16 +28,16 @@ angular.module('placesCtrl', [])
 
       var map = new google.maps.Map(document.getElementById('map'), {
         center: point,
-        zoom: 15
+        zoom: 14
       })
 
       var infowindow = new google.maps.InfoWindow();
 
-
       var request = {
         location: point,
         radius: '500',
-        query: place.activity
+        query: place.activity,
+        language: 'en'
       };
 
       var service = new google.maps.places.PlacesService(map);
@@ -43,10 +45,18 @@ angular.module('placesCtrl', [])
 
       function callback(results, status) {
         if (status === "OK") {
+          // console.log("Results Array ", results)
+          // ctrl.places = results;
+          console.log('Ctrl places ', ctrl.places)
           for(var i = 0; i < results.length; i++) {
             createMarker(results[i])
-            console.log(results[i])
+            var address = results[i].formatted_address;
+            var splitAddress = address.split(",");
+            splitAddress.pop();
+            results[i].formatted_address = splitAddress.join(",");
+            ctrl.places.push(results[i])
           }
+          $scope.$apply();
         } else {
           console.log("Status ", status)
         }
@@ -73,7 +83,6 @@ angular.module('placesCtrl', [])
           var lng = position.coords.longitude;
           console.log("About to pass in coords to map ", lat, lng)
           ctrl.showMap(lat, lng, place);
-          // ctrl.nearbyPlaces()
         })
       }
 
