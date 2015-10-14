@@ -5,7 +5,7 @@ nav {background: none !important;}
 .h40 {height: 40px;}
 .h50 {height: 50px !important;}
 .h400 {height: 400px;}
-.h545 {height: 545px;}
+.h533 {height: 533px;}
 
 .bgc-white {background-color: white;}
 .bg-none {background: none !important;}
@@ -36,7 +36,7 @@ nav {background: none !important;}
 .b-20 {bottom: 20px !important;}
 
 .fz-1-5 { font-size: 1.5em !important; }
-.fz-5 { font-size: 5em !important; }
+.fz-4-5 { font-size: 4.5em !important; }
 .f-dancing-script {font-family: 'Dancing Script', cursive;}
 
 .c-white { color: white !important; }
@@ -47,6 +47,15 @@ nav {background: none !important;}
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../../../assets/src/img/place.jpg');
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (max-width: 640px) {
+  #hero-img {
+    height: 645px;
+  }
+  #hero-text h1 {
+    font-size: 3em !important;
+  }
 }
 
 @media screen and (max-width:480px) {
