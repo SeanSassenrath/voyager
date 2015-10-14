@@ -51,10 +51,10 @@ nav {background: none !important;}
 
 @media screen and (max-width:480px) {
   #hero-img {
-    height: 595px;
+    height: 515px;
   }
   #hero-text {
-    padding-top: 120px;
+    padding-top: 40px;
   }
   #hero-text h1 {
     font-size: 2em !important;
