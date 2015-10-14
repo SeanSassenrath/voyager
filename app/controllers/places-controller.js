@@ -93,8 +93,9 @@ angular.module('placesCtrl', [])
         geocoder.geocode( { 'address': place.location}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             console.log("location results ", results)
-            var lat = results[0].geometry.location.J;
-            var lng = results[0].geometry.location.M;
+            var lat = results[0].geometry.location.lat();
+            var lng = results[0].geometry.location.lng();
+            console.log("Coordinates are " + lat + " lat, and " + lng + " lng")
             ctrl.showMap(lat, lng, place)
           } else {
             alert("Geocode was not successful for the following reason: " + status);

@@ -54,7 +54,6 @@
 
   <main>
 
-<div>
     <div class="row" ng-hide="place.places <= 0">
       <div class="small-12 text-center columns pt25 debug">
         <h4>Places near {{place.newPlace.location || "your current location"}}</h4>
@@ -67,7 +66,6 @@
 
     <div class="row">
       <div class="small-12 medium-9 debug small-centered columns">
-
         <div class="row pt15" ng-model="place.places" ng-repeat="place in place.places">
           <div class="small-12 medium-5 columns debug" style="height: 200px; background-position: center; background-size: cover; background-image: url('{{place.photos[0].getUrl({maxWidth: 200}) || './assets/public/img/no-img.png'}}')">
             <img class="bgc-white h40 pt5 pr5 pb5 pl10 pos-a l-0 b-20 bdr-top-right-2 bdr-bottom-right-2" src="{{place.icon}}"/>
@@ -96,10 +94,8 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  </div>
 
   </main>
 
@@ -113,7 +109,6 @@
 
   <script type="text/javascript" src="assets/public/js/main.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67l5ej33fk4Y1YT4SjLNeSYJwHp0G22I&libraries=places"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
   <script type="text/javascript" src="app/voyager.js"></script>
   <script type="text/javascript" src="app/controllers/places-controller.js"></script>
   <script type="text/javascript" src="app/models/places-model.js"></script>

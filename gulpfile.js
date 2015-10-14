@@ -14,6 +14,10 @@ gulp.task('js', function() {
 
     gulp.src(plugins.mainBowerFiles().concat(jsFiles))
         .pipe(plugins.filter('*.js'))
+        .pipe(plugins.order([
+            'jquery.js',
+            '*'
+        ]))
         .pipe(plugins.concat('main.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest(dest + 'js'));
