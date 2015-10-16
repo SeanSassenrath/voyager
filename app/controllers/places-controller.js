@@ -21,7 +21,7 @@ angular.module('placesCtrl', [])
 
     //Submitting a new places request
     ctrl.submit = function(place) {
-      console.log("New place = ", place.activity + " " + place.location);
+      // console.log("New place = ", place.activity + " " + place.location);
       if(place.location === "" || place.location === "current location") {
         ctrl.getCurrentLocation(place)
       } else {
@@ -31,7 +31,7 @@ angular.module('placesCtrl', [])
 
     //Creates the google map / google map markers
     ctrl.showMap = function(lat, lng, place) {
-      console.log("Loading google map")
+      // console.log("Loading google map")
 
       var point = new google.maps.LatLng(lat, lng);
 
@@ -62,7 +62,7 @@ angular.module('placesCtrl', [])
             results[i].formatted_address = splitAddress.join(",");
             ctrl.places.push(results[i])
           }
-          console.log('Ctrl places ', ctrl.places)
+          // console.log('Ctrl places ', ctrl.places)
           $scope.$apply();
         } else {
           console.log("Status ", status)
@@ -86,10 +86,10 @@ angular.module('placesCtrl', [])
     //Retrieves the user's current location and executes the showMap function
     ctrl.getCurrentLocation = function(place) {
       navigator.geolocation.getCurrentPosition(function(position) {
-          console.log("Finding users current location")
+          // console.log("Finding users current location")
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
-          console.log("About to pass in coords to map ", lat, lng)
+          // console.log("About to pass in coords to map ", lat, lng)
           ctrl.showMap(lat, lng, place);
         })
       }
@@ -99,10 +99,10 @@ angular.module('placesCtrl', [])
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode( { 'address': place.location}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
-            console.log("location results ", results)
+            // console.log("location results ", results)
             var lat = results[0].geometry.location.lat();
             var lng = results[0].geometry.location.lng();
-            console.log("Coordinates are " + lat + " lat, and " + lng + " lng")
+            // console.log("Coordinates are " + lat + " lat, and " + lng + " lng")
             ctrl.showMap(lat, lng, place)
           } else {
             alert("Geocode was not successful for the following reason: " + status);

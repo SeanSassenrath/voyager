@@ -1,5 +1,8 @@
-//Future jQuery snippets go here
-
 $(document).ready(function() {
-  console.log("jQuery is present")
+  console.log('test18')
+  $("#search").on("click", function() {
+    $('html, body').animate({
+      scrollTop: $('main').offset().top
+    }, 3000)
+  })
 })
