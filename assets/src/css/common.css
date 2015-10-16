@@ -2,21 +2,26 @@
 
 nav {background: none !important;}
 
+/*height*/
 .h40 {height: 40px;}
 .h50 {height: 50px !important;}
 .h400 {height: 400px;}
 .h533 {height: 533px;}
 
+/*backgrounds*/
 .bgc-white {background-color: white;}
 .bg-none {background: none !important;}
 
+/*borders*/
 .bd-none {border: none !important;}
 .bd-bottom-white {border-bottom: 2px solid white !important;}
 .bdr-bottom-right-2 {border-bottom-right-radius: 2px !important;}
 .bdr-top-right-2 {border-top-right-radius: 2px !important;}
 
+/*margins*/
 .mt38 {margin-top: 38px !important}
 
+/*padding*/
 .pt5 {padding-top: 5px;}
 .pt15 {padding-top: 15px;}
 .pt25 {padding-top: 25px;}
@@ -29,27 +34,32 @@ nav {background: none !important;}
 
 .pl10 {padding-left: 10px;}
 
+/*positioning*/
 .pos-a {position: absolute !important;}
 
 .l-0 {left: 0 !important;}
 
 .b-20 {bottom: 20px !important;}
 
+/*fonts*/
 .fz-1-5 { font-size: 1.5em !important; }
 .fz-4-5 { font-size: 4.5em !important; }
 .f-dancing-script {font-family: 'Dancing Script', cursive;}
 
+/*colors*/
 .c-white { color: white !important; }
 .c-gray { color: #797979 !important; }
 .c-mint {color: #8BB79F !important;}
 .c-salmon {color: #FF7373 !important;}
 
+/*groups*/
 .hero {
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../../../assets/src/img/place.jpg');
   background-position: center;
   background-size: cover;
 }
 
+/*media queries*/
 @media screen and (max-width: 640px) {
   #hero-img {
     height: 645px;

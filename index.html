@@ -10,7 +10,6 @@
 <body ng-controller="PlacesCtrl as place">
 
   <head>
-
     <div id="hero-img" class="h533 hero debug">
       <nav class="top-bar debug">
         <ul class="title-area">
@@ -49,17 +48,15 @@
         </form>
       </div>
     </div>
-
   </head>
 
   <main>
-
     <div class="row" ng-if="place.places <= 0">
       <div class="small-12 medium-4 columns pt50">
         <div class="row">
           <div class="small-11 small-centered text-center columns">
             <h3 class="c-gray">1. What to do</h3>
-            <h6 class="c-gray">Enter in an activity that you're looking for, whether it's going to the movies or finding a slice of pie.</h6>
+            <h6 class="c-gray">Enter in an activity that you're looking for, whether it's going to the movies or finding a cup of coffee.</h6>
           </div>
         </div>
       </div>
@@ -75,7 +72,7 @@
         <div class="row">
           <div class="small-11 small-centered text-center columns">
             <h3 class="c-gray">3. See results</h3>
-            <h6 class="c-gray">Browse through a list of activities based on the requested location.</h6>
+            <h6 class="c-gray">Browse through a list of activities based on your requested location.</h6>
           </div>
         </div>
       </div>
@@ -86,7 +83,8 @@
         <h4>Places near {{place.newPlace.location || "your current location"}}</h4>
       </div>
     </div>
-    <div class="row" ng-hide="place.places <= 0">
+    <div class="row">
+    <!-- <div class="row" ng-hide="place.places <= 0"> -->
       <div id="map" class="small-12 columns h400 debug">
       </div>
     </div>
@@ -123,7 +121,6 @@
         </div>
       </div>
     </div>
-
   </main>
 
 

@@ -5,17 +5,21 @@ angular.module('placesCtrl', [])
 
     var ctrl = this;
 
+    //newPlace object created with the user's input
     ctrl.newPlace = {
       activity: "",
       location: "",
     };
 
+    //Storage for places
     ctrl.places = [];
 
+    //Resets the places storage array when a new query is made
     ctrl.resetPlaces = function() {
       ctrl.places = []
     }
 
+    //Submitting a new places request
     ctrl.submit = function(place) {
       console.log("New place = ", place.activity + " " + place.location);
       if(place.location === "" || place.location === "current location") {
@@ -25,6 +29,7 @@ angular.module('placesCtrl', [])
       }
     }
 
+    //Creates the google map / google map markers
     ctrl.showMap = function(lat, lng, place) {
       console.log("Loading google map")
 
@@ -78,6 +83,7 @@ angular.module('placesCtrl', [])
       }
     }
 
+    //Retrieves the user's current location and executes the showMap function
     ctrl.getCurrentLocation = function(place) {
       navigator.geolocation.getCurrentPosition(function(position) {
           console.log("Finding users current location")
@@ -88,6 +94,7 @@ angular.module('placesCtrl', [])
         })
       }
 
+      //Retrieves location based on user's input and executes the showMap function
       ctrl.getLocation = function(place) {
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode( { 'address': place.location}, function(results, status) {
@@ -103,6 +110,5 @@ angular.module('placesCtrl', [])
         });
       }
 
-    // ctrl.getLocation();
   })
 ;
