@@ -1,5 +1,6 @@
 # Voyager
 Voyager - An app for finding nearby places.
+Live on [seansassenrath.github.com/voyager](seansassenrath.github.com/voyager)
 
 ##How to use it
 Voyager is an app for finding places to go in a particular area. First enter in an activity or place you'd like to find, for example "coffee shop". Next, either enter in a city or zipcode, or type nothing at all to use your current location. The page will automatically scroll down to the query results upon selecting the "Search" button. Results of the query will be displayed on a map as well as a row for each individual location providing information such as the address, rating and if the establishment is currently opened or closed.
