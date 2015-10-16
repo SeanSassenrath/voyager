@@ -12,7 +12,7 @@ Allowed me to easily add libraries such as jQuery, Angular and Foundation to my 
 Used for concatenating and minifying my JavaScript and CSS for faster dev time and better web performance.
 
 ####AngularJS
-Used for caputring query parameters, building GooglePlaces API calls and ng directives. Will be useful for building out next steps where I'll require sessions for user data and custom directives for modularizing more complex functionality.
+Used for capturing query parameters, building GooglePlaces API calls and ng directives. Will be useful for building out next steps where I'll require sessions for user data and custom directives for modularizing more complex functionality.
 
 ####Jquery
 Used for building the smooth scroll functionality upon selecting the "Search" button.
