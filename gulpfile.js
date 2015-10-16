@@ -10,12 +10,13 @@ var plugins = require('gulp-load-plugins')({
 var dest = 'assets/public/';
 
 gulp.task('js', function() {
-    var jsFiles = ['assets/src/js/*'];
+    var jsFiles = ['assets/src/js/*.js'];
 
     gulp.src(plugins.mainBowerFiles().concat(jsFiles))
         .pipe(plugins.filter('*.js'))
         .pipe(plugins.order([
             'jquery.js',
+            'angular.js',
             '*'
         ]))
         .pipe(plugins.concat('main.js'))
@@ -37,5 +38,8 @@ gulp.task('css', function() {
         .pipe(plugins.minifyCss())
         .pipe(gulp.dest(dest + 'css'));
 });
+
+gulp.watch('assets/src/js/*.js', ['js']);
+gulp.watch('assets/src/css/*.css', ['css']);
 
 gulp.task('default', ['js', 'css']);
